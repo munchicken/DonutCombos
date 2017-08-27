@@ -34,6 +34,12 @@ for icing in icings:
 """
 create lang list
 """
+for icing in icings:
+    for sprinkle in sprinkles:
+        for filling in fillings:
+            lang.append( 'item.' + icing.capitalize() + sprinkle.capitalize() + filling[0].upper() + filling[1:] +
+                         'Donut.name=' + icing.capitalize() + ' ' + sprinkle.capitalize() + ' ' + filling[0].upper() +
+                         filling[1:] + ' Donut' )
 
 """
 create recipe list
