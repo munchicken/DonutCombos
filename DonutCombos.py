@@ -38,3 +38,12 @@ output lists for copy/paste
 print ('ModItems: \n')
 for item in item1:
     print (item)
+print ('\nloadItems: \n')
+for item in item2:
+    print (item)
+print ('\nen_US.lang: \n')
+for item in lang:
+    print (item)
+print ('\nModRecipes: \n')
+for item in recipe:
+    print (item)
