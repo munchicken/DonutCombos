@@ -44,6 +44,20 @@ for icing in icings:
 """
 create recipe list
 """
+for icing in icings:
+    for sprinkle in sprinkles:
+        for filling in fillings:
+            if icing == 'none' and sprinkle == 'none' and filling == 'none':
+                continue
+            item = 'GameRegistry.addShapelessRecipe( new ItemStack( ModItem.' + icing + sprinkle.capitalize() + \
+                   filling[0].upper() + filling[1:] + 'Donut), new Object[]{\n\tModItems.cookedDonut, '
+            if icing != 'none':
+                item = item + ', ModItems.' + icing + ', ModItems.pastryBag'
+            if sprinkle != 'none':
+                item = item + ', ModItems.' + sprinkle + ', ModItems.shaker'
+            if filling != 'none':
+                item = item + ', ModItems.' + filling + ', ModItems.fillingTube'
+            recipe.append(item)
 
 """
 output lists for copy/paste
