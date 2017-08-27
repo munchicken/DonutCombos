@@ -17,12 +17,19 @@ create item1 list
 for icing in icings:
     for sprinkle in sprinkles:
         for filling in fillings:
-            item1.append( 'public static ItemFood ' + icing + sprinkle.capitalize() + filling.capitalize() + 'Donut;' )
-
+            item1.append( 'public static ItemFood ' + icing + sprinkle.capitalize() + filling[0].upper() +
+                          filling[1:] + 'Donut;' )
 
 """
 create item2 list
 """
+for icing in icings:
+    for sprinkle in sprinkles:
+        for filling in fillings:
+            item2.append( icing + sprinkle.capitalize() + filling[0].upper() + filling[1:] + 'Donut = new Donut(Donut.Icing.' +
+                          icing.upper() + ', Donut.Sprinkle.' + sprinkle.upper() + ', Donut.Fill.' + filling.upper() +
+                          ');\n\tRegisterHelper.registerItem(' + icing + sprinkle.capitalize() + filling[0].upper() +
+                          filling[1:] + 'Donut );' )
 
 """
 create lang list
