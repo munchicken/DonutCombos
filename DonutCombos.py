@@ -41,11 +41,11 @@ for icing in icings:
         for filling in fillings:
             item = 'item.' + icing.capitalize() + sprinkle.capitalize() + filling[0].upper() + filling[1:] + 'Donut.name='
             if icing != 'none':
-                item = item + icing.capitalize()
+                item = item + icing.capitalize() + ' Iced'
             if sprinkle != 'none':
-                item = item + ' ' + sprinkle.capitalize()
+                item = item + ' ' + sprinkle.capitalize() + ' Sprinkled'
             if filling != 'none':
-                item = item + ' ' + filling[0].upper() + filling[1:]
+                item = item + ' ' + filling[0].upper() + filling[1:] + ' Filled'
             item = item + ' Donut'
             lang.append( item )
 
