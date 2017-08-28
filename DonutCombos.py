@@ -58,7 +58,7 @@ for icing in icings:
             if icing == 'none' and sprinkle == 'none' and filling == 'none':
                 continue
             item = 'GameRegistry.addShapelessRecipe( new ItemStack( ModItems.' + icing + sprinkle.capitalize() + \
-                   filling[0].upper() + filling[1:] + 'Donut), new Object[]{\n\t\tModItems.cookedDonut, '
+                   filling[0].upper() + filling[1:] + 'Donut), new Object[]{\n\t\tModItems.cookedDonut'
             if icing != 'none':
                 item = item + ', ModItems.' + icing + 'Icing, ModItems.pastryBag'
             if sprinkle != 'none':
