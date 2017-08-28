@@ -31,7 +31,7 @@ for icing in icings:
             item2.append( icing + sprinkle.capitalize() + filling[0].upper() + filling[1:] + 'Donut = new Donut(Donut.Icing.' +
                           icing.upper() + ', Donut.Sprinkle.' + sprinkle.upper() + ', Donut.Fill.' + filling.upper() +
                           ');\n\tRegisterHelper.registerItem(' + icing + sprinkle.capitalize() + filling[0].upper() +
-                          filling[1:] + 'Donut );' )
+                          filling[1:] + 'Donut );\n' )
 
 """
 create lang list
@@ -57,7 +57,7 @@ for icing in icings:
         for filling in fillings:
             if icing == 'none' and sprinkle == 'none' and filling == 'none':
                 continue
-            item = 'GameRegistry.addShapelessRecipe( new ItemStack( ModItem.' + icing + sprinkle.capitalize() + \
+            item = 'GameRegistry.addShapelessRecipe( new ItemStack( ModItems.' + icing + sprinkle.capitalize() + \
                    filling[0].upper() + filling[1:] + 'Donut), new Object[]{\n\t\tModItems.cookedDonut, '
             if icing != 'none':
                 item = item + ', ModItems.' + icing + 'Icing, ModItems.pastryBag'
@@ -65,7 +65,7 @@ for icing in icings:
                 item = item + ', ModItems.' + sprinkle + 'Sprinkles, ModItems.shaker'
             if filling != 'none':
                 item = item + ', ModItems.' + filling + 'Filling, ModItems.fillingTube'
-            item = item + '\n\t});'
+            item = item + '\n\t});\n'
             recipe.append(item)
 
 """
